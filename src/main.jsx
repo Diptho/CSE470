@@ -23,6 +23,10 @@ import {
 } from '@tanstack/react-query'
 import Classes from './components/Pages/Classes.jsx';
 import BookedClasses from './components/BookedClasses.jsx';
+import AllUsers from './components/Admin/AllUsers.jsx';
+import AddClass from './components/Instructor/AddClass.jsx';
+import ManageClasses from './components/Admin/ManageClasses.jsx';
+import InstructorClasses from './components/Instructor/InstructorClasses.jsx';
 // import { getTodos, postTodo } from '../my-api'
 
 
@@ -59,14 +63,14 @@ const router = createBrowserRouter([
         path: '/dashboard/adminHome',
         element: <AdminHome></AdminHome>
       },
-      // {
-      //   path: '/dashboard/allUsers',
-      //   element: <AllUsers></AllUsers>
-      // },
-      // {
-      //   path: '/dashboard/manageClasses',
-      //   element: <ManageClasses></ManageClasses>
-      // },
+      {
+        path: '/dashboard/allUsers',
+        element: <AllUsers></AllUsers>
+      },
+      {
+        path: '/dashboard/manageClasses',
+        element: <ManageClasses></ManageClasses>
+      },
       // {
       //   path: '/dashboard/allPayments',
       //   element: <AllPayments></AllPayments>
@@ -77,14 +81,14 @@ const router = createBrowserRouter([
         path: '/dashboard/instructorHome',
         element: <InstructorHome></InstructorHome>
       },
-      // {
-      //   path: '/dashboard/addClass',
-      //   element: <AddClass></AddClass>
-      // },
-      // {
-      //   path: '/dashboard/instructorClasses',
-      //   element: <InstructorClasses></InstructorClasses>
-      // },
+      {
+        path: '/dashboard/addClass',
+        element: <AddClass></AddClass>
+      },
+      {
+        path: '/dashboard/instructorClasses',
+        element: <InstructorClasses></InstructorClasses>
+      },
       // {
       //   path: '/dashboard/updateClass/:id',
       //   element: <UpdateClasses></UpdateClasses>
