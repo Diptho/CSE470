@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { userAuth } from './UserProvider';
 
 const Login = () => {
 
   let { googlePopUp } = useContext(userAuth)
+
+  let [err, setErr] = useState(null)
 
   let submit = (event) => {
 
@@ -27,10 +29,30 @@ const Login = () => {
 
   }
 
-  let google = ()=>{
+  let google = () => {
+    setErr(null)
     googlePopUp()
+        .then(newUser => {
+           
+            console.log(newUser.user.displayName);
+            let gUser = { name: newUser.user.displayName, email: newUser.user.email, photo: newUser.user.photoURL, role: 'student' }
+            console.log(gUser);
+            fetch('http://localhost:3000/users', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(gUser)
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
 
-  }
+        })
+        .catch(err=>{
+            setErr(err)
+        })
+}
+
 
 
   return (

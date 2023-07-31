@@ -6,6 +6,8 @@ import Navbar from './components/Navbar'
 import Banner from './components/Banner'
 import PopularClasses from './components/PopularClasses'
 import PopularInstructor from './components/PopularInstructor'
+import ExtraSection from './components/ExtraSection'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,9 +15,7 @@ function App() {
   return (
     <>
     <Navbar></Navbar> 
-    <Banner></Banner> 
-    <PopularClasses></PopularClasses>
-    <PopularInstructor></PopularInstructor>
+    <Outlet></Outlet>
     </>
   )
 }
