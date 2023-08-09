@@ -27,6 +27,8 @@ import AllUsers from './components/Admin/AllUsers.jsx';
 import AddClass from './components/Instructor/AddClass.jsx';
 import ManageClasses from './components/Admin/ManageClasses.jsx';
 import InstructorClasses from './components/Instructor/InstructorClasses.jsx';
+import PopularInstructor from './components/PopularInstructor.jsx';
+import Instructors from './components/Instructors.jsx';
 // import { getTodos, postTodo } from '../my-api'
 
 
@@ -50,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/classes",
         element: <Classes></Classes>,
+      },
+      {
+        path: "/instructors",
+        element: <Instructors></Instructors>,
       },
     ],
   },

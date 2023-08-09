@@ -59,7 +59,7 @@ const Dashboard = () => {
                                 <p className='mt-14 flex gap-3 items-center'> <FaHome></FaHome><NavLink to={'/dashboard/adminHome'}>Admin Home</NavLink></p>
                                 <p className='mt-3 flex gap-3 items-center'> <FaUsers></FaUsers><NavLink to={'/dashboard/allUsers'}>All Users</NavLink></p>
                                 <p className='mt-3 flex gap-3 items-center'> <FaAngleDoubleRight></FaAngleDoubleRight> <NavLink to={'/dashboard/manageClasses'}>Manage Classes</NavLink></p>
-                                <p className='mt-3 flex gap-3 items-center'> <FaWallet></FaWallet> <NavLink to={'/dashboard/allPayments'}>ALL Payments</NavLink></p>
+                              
 
 
 
@@ -77,8 +77,7 @@ const Dashboard = () => {
                                     <p className='mt-14 flex gap-3 items-center'> <FaHome></FaHome><NavLink to={'/dashboard/studentHome'}>Home</NavLink></p>
                                     <p className='mt-3 flex gap-3 items-center'> <FaRegBookmark></FaRegBookmark><NavLink to={'/dashboard/bookedClasses'}>Booked Classes</NavLink></p>
                                     <p className='mt-3 flex gap-3 items-center'> <FaWallet></FaWallet><NavLink to={'/dashboard/confirmedClasses'}>Confirmed Classes</NavLink></p>
-                                    <p className='mt-3 flex gap-3 items-center'> <FaHistory></FaHistory><NavLink to={'/dashboard/paymentHistory'}>Payment History</NavLink></p>
-
+                                  
                                 </ul>
                     }
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const PopularClasses = () => {
 
@@ -6,7 +7,7 @@ const PopularClasses = () => {
     let [popularClasses, setClasses] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/classes`)
+        fetch(`http://localhost:3000/classes/approved`)
             .then(res => res.json())
             .then(data => setClasses(data))
 
@@ -26,7 +27,7 @@ const PopularClasses = () => {
                             <p>{item.iName}</p>
                             <p>Total Student : {item.student}</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
+                            <Link to={'/classes'}><button className="btn btn-primary">Buy Now</button></Link>
                             </div>
                         </div>
                     </div>)

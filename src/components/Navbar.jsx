@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { userAuth } from './UserProvider';
+
+
 
 const Navbar = () => {
+
+
+    let {user, logOut} = useContext(userAuth)
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -22,19 +28,31 @@ const Navbar = () => {
                             <li><a>Item 3</a></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl"><Link to={'/'}>470</Link></a>
+                    <a className="btn btn-ghost normal-case text-xl"><Link to={'/'}>
+                        Complete Footballer</Link></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-                        <li><Link to={'/classes'}>Classes</Link></li>
-                       <li><Link to={'/dashboard'}>Dashboard</Link></li>
-                      
+
+                        <li><Link to={'/classes'}>Classes</Link></ li>
+                        <li><Link to={'/instructors'}>Instructors</Link></ li>
+                        <li><Link to={'/dashboard'}>Dashboard</Link></li>
+                        <li><button onClick={logOut}>Logout</button></li>
+
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to={"/login"} className='btn
-                    '>login</Link>
+                    {user ? <>
+                    <h1 className='mr-10 text-base font-semibold'>Hi, {user.displayName}</h1>
+                        <div className="avatar online">
+                        <div className="w-12 rounded-full">
+                            
+                            <img src={user.photoURL} />
+                        </div>
+                    </div></> :
+
+                        <Link to={"/login"} className='btn
+                    '>login</Link>}
 
 
                 </div>
